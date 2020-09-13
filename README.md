@@ -1,6 +1,6 @@
 #Event Manager#
 
-from The Odin Project, an Event Manager program with GoogleCivic API
+from [The Odin Project](https://www.theodinproject.com/courses/ruby-programming/lessons/event-manager?ref=lnav), an Event Manager program with GoogleCivic API
 
 ###Problem###
 
