@@ -2,6 +2,21 @@ require 'csv'
 require 'google/apis/civicinfo_v2'
 require 'erb'
 
+def clean_phonenumber(phonenumber)
+  if phonenumber.length == 10
+    phonenumber
+  elsif phonenumber.length > 11
+    ''
+  elsif phonenumber.length < 10
+    '' 
+  elsif (phonenumber.length == 11) && (phonenumber[0] == '1')
+    phonenumber[1..-1]
+  elsif phonenumber.nil?
+    ''
+  end
+end
+
+
 def clean_zipcode(zipcode)
   zipcode.to_s.rjust(5, '0')[0..4]
 end
@@ -43,6 +58,7 @@ contents.each do |row|
   name = row[:first_name]
   zipcode = clean_zipcode(row[:zipcode])
   legislators = legislators_by_zipcode(zipcode)
+  phonenumber = clean_phonenumber(row[:homephone].gsub(/([-(). ])/, ''))
 
   form_letter = erb_template.result(binding)
 
