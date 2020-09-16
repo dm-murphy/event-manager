@@ -45,40 +45,39 @@ def display_popular_hours(overnight, morning, afternoon, evening)
 end
 
 def popular_days(days)
-  su = m = tu = w = th = f = sa = 0
+  sun = mon = tue = wed = thu = fri = sat = 0
   days.each do |wday|
-    if wday == "0"
-      su += 1
-    elsif wday == "1"
-      m += 1
-    elsif wday == "2"
-      tu += 1
-    elsif wday == "3"
-      w += 1
-    elsif wday == "4"
-      th += 1
-    elsif wday == "5"
-      f += 1
-    elsif wday == "6"
-      sa += 1
+    if wday == '0'
+      sun += 1
+    elsif wday == '1'
+      mon += 1
+    elsif wday == '2'
+      tue += 1
+    elsif wday == '3'
+      wed += 1
+    elsif wday == '4'
+      thu += 1
+    elsif wday == '5'
+      fri += 1
+    elsif wday == '6'
+      sat += 1
     end
   end
-  display_popular_days(su, m, tu, w, th, f, sa)
+  display_popular_days(sun, mon, tue, wed, thu, fri, sat)
 end
 
-def display_popular_days(su, m, tu, w, th, f, sa)
+def display_popular_days(sun, mon, tue, wed, thu, fri, sat)
   puts 'Registrations per day of the week: '
   puts
-  puts "Sunday: #{su}"
-  puts "Monday: #{m}"
-  puts "Tuesday: #{tu}"
-  puts "Wednesday: #{w}"
-  puts "Thursday: #{th}"
-  puts "Friday: #{f}"
-  puts "Saturday: #{sa}"
+  puts "Sunday: #{sun}"
+  puts "Monday: #{mon}"
+  puts "Tuesday: #{tue}"
+  puts "Wednesday: #{wed}"
+  puts "Thursday: #{thu}"
+  puts "Friday: #{fri}"
+  puts "Saturday: #{sat}"
   puts
 end
-
 
 def clean_phonenumber(phonenumber)
   if phonenumber.length == 10
@@ -141,11 +140,9 @@ contents.each do |row|
 
   save_thank_you_letter(id, form_letter)
   
-  # Find the popular registration hours
+  # Find the popular registration time targets
   hour = (registration_hour(row[:regdate]))
   @hours.push(hour)
-
-  # Find popular days of the week
   day = (registration_day(row[:regdate]))
   @days.push(day)
 end
