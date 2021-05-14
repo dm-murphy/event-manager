@@ -1,6 +1,6 @@
 # Event Manager #
 
-from [The Odin Project](https://www.theodinproject.com/courses/ruby-programming/lessons/event-manager?ref=lnav), an Event Manager program with GoogleCivic API. Adapted from Jump Start Lab.
+from [The Odin Project](https://www.theodinproject.com/paths/full-stack-ruby-on-rails/courses/ruby-programming/lessons/event-manager-ruby-programming), an Event Manager program with GoogleCivic API. Adapted from Jump Start Lab.
 
 ### Problem ###
 
